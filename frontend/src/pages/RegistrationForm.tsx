@@ -947,7 +947,8 @@ const RegistrationForm: React.FC = () => {
               const labels = extend.items.map(item => item?.label).filter(Boolean);
               const cityText = labels.join(' - ');
               setCityLabel(cityText);
-              setCityValue(val);
+              // 将 PickerValue[] 转换为 (string | null)[]
+              setCityValue(val.map(v => v !== null && v !== undefined ? String(v) : null));
               form.setFieldsValue({ city: cityText });
             }}
           />
