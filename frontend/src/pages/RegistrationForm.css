@@ -1,0 +1,717 @@
+/* 页面整体布局 */
+.registration-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding-bottom: 80px;
+}
+
+/* 顶部Banner */
+.page-header {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 32px 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 16px;
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.4));
+  letter-spacing: 3px;
+  line-height: 1.3;
+}
+
+.header-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 16px 0;
+  opacity: 0.95;
+  letter-spacing: 1px;
+}
+
+.header-info {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.header-info span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 卡片样式 */
+.section-card {
+  margin: 0 12px 16px 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.section-card .adm-card-body {
+  padding: 16px;
+}
+
+/* 区块标题 */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  font-weight: 700;
+  color: #1e3c72;
+  margin-bottom: 20px;
+  padding: 12px 0 12px 12px;
+  border-left: 5px solid #1677ff;
+  background: linear-gradient(90deg, rgba(22, 119, 255, 0.08) 0%, rgba(22, 119, 255, 0) 100%);
+  border-radius: 4px;
+}
+
+.section-title svg,
+.section-title > span:first-child {
+  font-size: 24px;
+  color: #1677ff;
+}
+
+/* h3 标题统一样式 */
+h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e3c72;
+  margin: 16px 0 12px 0;
+  line-height: 1.4;
+}
+
+/* h4 标题统一样式 */
+h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin: 12px 0 8px 0;
+  line-height: 1.4;
+}
+
+/* 会议议程表格 */
+.schedule-table {
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+.schedule-row {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  margin-bottom: -1px;
+}
+
+.schedule-row.header-row {
+  background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+  color: white;
+  font-weight: 600;
+}
+
+.schedule-cell {
+  padding: 12px 8px;
+  font-size: 13px;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule-cell:last-child {
+  border-right: none;
+}
+
+.schedule-row:not(.header-row) .schedule-cell {
+  background: white;
+  align-items: flex-start;
+}
+
+.schedule-row:nth-child(even):not(.header-row) .schedule-cell {
+  background: #f8f9fa;
+}
+
+.schedule-row .schedule-cell:nth-child(1) {
+  flex: 0 0 80px;
+  min-width: 80px;
+}
+
+.schedule-row .schedule-cell:nth-child(2) {
+  flex: 0 0 100px;
+  min-width: 100px;
+}
+
+.schedule-row .schedule-cell:nth-child(3) {
+  flex: 1;
+  min-width: 200px;
+}
+
+.date-cell {
+  flex: 0 0 80px;
+  font-weight: 600;
+  text-align: center;
+  color: #1e3c72;
+}
+
+.detail-cell {
+  flex: 2;
+  padding: 12px 16px;
+}
+
+.detail-cell p {
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+.detail-cell .highlight {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.detail-cell ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.detail-cell li {
+  margin: 4px 0;
+}
+
+/* 费用说明 */
+.fee-section h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e3c72;
+  margin: 16px 0 10px 0;
+  padding-left: 8px;
+  border-left: 3px solid #1677ff;
+}
+
+.price {
+  color: #ff4d4f;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.companion-fee {
+  background: #f0f5ff;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 8px 0;
+  border-left: 3px solid #1677ff;
+}
+
+.companion-fee p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.companion-fee strong {
+  color: #1e3c72;
+}
+
+/* 付款信息 */
+.payment-info {
+  font-size: 14px;
+}
+
+.payment-account {
+  margin: 12px 0;
+}
+
+.payment-account h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e3c72;
+  margin-bottom: 10px;
+  padding-left: 8px;
+  border-left: 3px solid #1677ff;
+}
+
+.payment-account p {
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+/* 报名必读 */
+.notice-list p {
+  margin: 10px 0;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.notice-list strong {
+  color: #ff4d4f;
+}
+
+/* 联系信息 */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f0f5ff;
+  border-radius: 8px;
+}
+
+.contact-item p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* 表单样式 */
+.adm-form-item {
+  --border-bottom: none;
+  --border-inner: none;
+  margin-bottom: 6px;
+  padding: 0;
+}
+
+.adm-form-item + .adm-form-item {
+  padding: 0;
+}
+
+/* 列表项间距优化 */
+.adm-list-item {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.adm-list-item-content-main {
+  padding: 6px 0;
+}
+
+.adm-form-header {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e3c72;
+  padding: 20px 0 14px 0;
+  border-bottom: none;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.adm-form-header::before {
+  content: "▪";
+  color: #1677ff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 携带人员表单 */
+.companion-form {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+  border: 1px solid #e0e0e0;
+}
+
+.price-tag {
+  color: #ff4d4f;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+/* 费用显示 */
+.total-fee-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 24px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fee-label {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.fee-amount {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 附件上传 */
+.upload-section {
+  padding: 8px 0;
+}
+
+.upload-item {
+  margin-bottom: 24px;
+}
+
+.upload-item h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e3c72;
+  margin-bottom: 10px;
+  padding-left: 8px;
+  border-left: 3px solid #1677ff;
+}
+
+.required-mark {
+  color: #ff4d4f;
+  margin-left: 4px;
+}
+
+.upload-tip {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.upload-placeholder {
+  padding: 32px 16px;
+  border: 2px dashed #d9d9d9;
+  border-radius: 8px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  background: #fafafa;
+  transition: all 0.3s;
+}
+
+.upload-placeholder:active {
+  border-color: #1677ff;
+  background: #f0f5ff;
+  color: #1677ff;
+}
+
+/* 确认提交区域 */
+.confirmation-section {
+  padding: 8px 0;
+}
+
+.warning-box {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: #fff7e6;
+  border: 1px solid #ffd591;
+  border-radius: 8px;
+  border-left: 4px solid #ff4d4f;
+}
+
+.warning-box p {
+  flex: 1;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* 提交按钮 */
+.submit-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: white;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+
+.submit-wrapper .adm-button {
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 24px;
+  box-shadow: 0 4px 12px rgba(22, 119, 255, 0.3);
+}
+
+.submit-wrapper .adm-button:disabled {
+  background: #d9d9d9;
+  box-shadow: none;
+}
+
+/* Collapse 样式优化 */
+.adm-collapse-panel {
+  margin-bottom: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.adm-collapse-panel-header {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #1e3c72;
+}
+
+.adm-collapse-panel-content {
+  background: white;
+}
+
+/* List 样式优化 */
+.adm-list-item {
+  padding: 12px 0;
+}
+
+.adm-list-item-description {
+  color: #666;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Checkbox 优化 */
+.adm-checkbox-content {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-left: 8px;
+}
+
+.adm-checkbox-icon {
+  font-size: 22px;
+}
+
+/* Input 和 Select 优化 */
+.adm-input,
+.adm-selector {
+  font-size: 15px;
+}
+
+/* 输入框样式增强 */
+.adm-input-element {
+  min-height: 48px;
+  font-size: 15px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.adm-input-element:focus {
+  background-color: #fff;
+  border-color: #1677ff;
+  box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.1);
+  outline: none;
+}
+
+.adm-input-element::placeholder {
+  color: #bbb;
+  font-size: 14px;
+}
+
+/* 表单标签优化 */
+.adm-form-item-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Selector 选择器优化 */
+.adm-selector-item {
+  min-height: 44px;
+  font-size: 15px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.adm-selector-item-active {
+  border-color: #1677ff;
+  background: linear-gradient(135deg, rgba(22, 119, 255, 0.08) 0%, rgba(22, 119, 255, 0.12) 100%);
+  font-weight: 600;
+}
+
+/* Radio 优化 */
+.adm-radio-icon {
+  font-size: 22px;
+}
+
+.adm-radio-content {
+  font-size: 15px;
+  margin-left: 8px;
+}
+
+/* TextArea 文本域优化 */
+.adm-text-area-element {
+  min-height: 100px;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.adm-text-area-element:focus {
+  background-color: #fff;
+  border-color: #1677ff;
+  box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.1);
+  outline: none;
+}
+
+/* 响应式优化 */
+@media (max-width: 375px) {
+  .header-title {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  
+  .header-subtitle {
+    font-size: 16px;
+  }
+  
+  .section-title {
+    font-size: 17px;
+  }
+  
+  .schedule-cell {
+    font-size: 12px;
+    padding: 8px 6px;
+  }
+  
+  .fee-amount {
+    font-size: 24px;
+  }
+  
+  .adm-input-element,
+  .adm-selector-item,
+  .adm-radio-content,
+  .adm-checkbox-content {
+    font-size: 14px;
+  }
+  
+  .adm-form-item-label {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .registration-page {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-card {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 隐藏滚动条 */
+.schedule-table {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.schedule-table::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+  width: 0;
+  height: 0;
+}
+
+/* 会议详情折叠展开按钮 */
+.details-toggle-btn {
+  margin-bottom: 16px;
+  height: 48px;
+  border-radius: 12px;
+  border-width: 2px;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 2px 8px rgba(22, 119, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.details-toggle-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(22, 119, 255, 0.2);
+}
+
+.toggle-btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.toggle-btn-text {
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* 会议详情内容折叠效果 */
+.details-content {
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.4s ease;
+}
+
+.details-content.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.details-content.expanded {
+  max-height: 10000px;
+  opacity: 1;
+  margin-top: 0;
+}
+
+/* 优化触摸反馈 */
+.adm-button,
+.upload-placeholder,
+.adm-radio,
+.adm-checkbox {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 表单错误提示优化 */
+.adm-form-item-feedback-error {
+  color: #ff4d4f;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Divider 优化 */
+.adm-divider {
+  margin: 16px 0;
+  color: #1e3c72;
+  font-weight: 600;
+}
