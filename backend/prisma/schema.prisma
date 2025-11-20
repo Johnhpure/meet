@@ -21,7 +21,7 @@ model Registration {
   wechat            String?  @db.VarChar(50)
   city              String   @db.VarChar(50)
   position          String   @db.VarChar(50)
-  permitImageUrl    String   @db.VarChar(255)
+  permitImageUrl    String?  @db.VarChar(255)
   paymentImageUrl   String   @db.VarChar(255)
   totalFee          Int      @default(0)
   createdAt         DateTime @default(now())

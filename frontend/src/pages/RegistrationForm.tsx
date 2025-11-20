@@ -148,11 +148,11 @@ const RegistrationForm: React.FC = () => {
 
   // 表单提交
   const onFinish = async (values: any) => {
-    // 验证附件
-    if (permitImages.length === 0) {
-      Toast.show({ content: '请上传您的港澳通行证', icon: 'fail' });
-      return;
-    }
+    // 验证附件（港澳通行证改为非必填）
+    // if (permitImages.length === 0) {
+    //   Toast.show({ content: '请上传您的港澳通行证', icon: 'fail' });
+    //   return;
+    // }
     if (paymentImages.length === 0) {
       Toast.show({ content: '请上传付款截图', icon: 'fail' });
       return;
@@ -166,10 +166,11 @@ const RegistrationForm: React.FC = () => {
           Toast.show({ content: `请完善第${i + 1}位携带人员的基本信息`, icon: 'fail' });
           return;
         }
-        if (companion.permitImages.length === 0) {
-          Toast.show({ content: `请上传第${i + 1}位携带人员的港澳通行证`, icon: 'fail' });
-          return;
-        }
+        // 携带人员港澳通行证改为非必填
+        // if (companion.permitImages.length === 0) {
+        //   Toast.show({ content: `请上传第${i + 1}位携带人员的港澳通行证`, icon: 'fail' });
+        //   return;
+        // }
       }
     }
 
@@ -183,8 +184,8 @@ const RegistrationForm: React.FC = () => {
     try {
       const submitData = {
         ...values,
-        permitImageUrl: permitImages[0].url,
-        paymentImageUrl: paymentImages[0].url,
+        permitImageUrl: permitImages[0]?.url || '',
+        paymentImageUrl: paymentImages[0]?.url || '',
         hasPlusOnes,
         plusOnesCount,
         companions: hasPlusOnes ? companions.map(c => ({
@@ -195,7 +196,12 @@ const RegistrationForm: React.FC = () => {
       };
 
       await registrationApi.create(submitData);
-      Toast.show({ content: '报名成功！', icon: 'success' });
+      Toast.show({ 
+        content: '🎉 报名成功！正在跳转...', 
+        icon: 'success',
+        duration: 1500,
+        position: 'top',
+      });
       setTimeout(() => {
         navigate('/success');
       }, 1500);
@@ -452,7 +458,7 @@ const RegistrationForm: React.FC = () => {
             ⚠️ 报名必读
           </h3>
           <div className="notice-list">
-            <p>1、报名时请提供<strong>签注在有效期内</strong>的港澳通行证正反面</p>
+            <p>1、报名时建议提供<strong>签注在有效期内</strong>的港澳通行证正反面</p>
             <p>2、准确填写身份证信息</p>
             <p>3、上传会务费用转账记录</p>
             <p>4、填写真实姓名，不要写微信昵称</p>
@@ -873,7 +879,7 @@ const RegistrationForm: React.FC = () => {
                     </Form.Item>
                   )}
 
-                  <Form.Item label="港澳通行证" required>
+                  <Form.Item label="港澳通行证">
                     <ImageUploader
                       value={companion.permitImages}
                       onChange={(files) => updateCompanion(index, 'permitImages', files)}
@@ -970,8 +976,8 @@ const RegistrationForm: React.FC = () => {
 
         <div className="upload-section">
           <div className="upload-item">
-            <h4>1. 您的港澳通行证 <span className="required-mark">*</span></h4>
-            <p className="upload-tip">必须上传参会者本人且在有效期内的港澳通行证正反面</p>
+            <h4>1. 您的港澳通行证</h4>
+            <p className="upload-tip">建议上传参会者本人且在有效期内的港澳通行证正反面</p>
             <ImageUploader
               value={permitImages}
               onChange={setPermitImages}

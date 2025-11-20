@@ -402,12 +402,27 @@ const AdminDashboard: React.FC = () => {
                   <div style={{ marginBottom: 8, fontWeight: 'bold', color: '#666' }}>
                     本人港澳通行证
                   </div>
-                  <Image 
-                    src={currentDetail.permitImageUrl} 
-                    width="100%"
-                    style={{ borderRadius: 8, border: '1px solid #e8e8e8' }}
-                    placeholder={<div style={{ height: 200, background: '#f0f0f0' }} />}
-                  />
+                  {currentDetail.permitImageUrl ? (
+                    <Image 
+                      src={currentDetail.permitImageUrl} 
+                      width="100%"
+                      style={{ borderRadius: 8, border: '1px solid #e8e8e8' }}
+                      placeholder={<div style={{ height: 200, background: '#f0f0f0' }} />}
+                    />
+                  ) : (
+                    <div style={{ 
+                      height: 200, 
+                      background: '#f5f5f5', 
+                      border: '1px dashed #d9d9d9', 
+                      borderRadius: 8,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#999'
+                    }}>
+                      未上传
+                    </div>
+                  )}
                 </Col>
                 <Col span={12}>
                   <div style={{ marginBottom: 8, fontWeight: 'bold', color: '#666' }}>
@@ -460,11 +475,28 @@ const AdminDashboard: React.FC = () => {
                         <div style={{ marginBottom: 8, fontWeight: 'bold', color: '#666', fontSize: 13 }}>
                           港澳通行证
                         </div>
-                        <Image 
-                          src={companion.permitImageUrl} 
-                          width={200}
-                          style={{ borderRadius: 8, border: '1px solid #e8e8e8' }}
-                        />
+                        {companion.permitImageUrl ? (
+                          <Image 
+                            src={companion.permitImageUrl} 
+                            width={200}
+                            style={{ borderRadius: 8, border: '1px solid #e8e8e8' }}
+                          />
+                        ) : (
+                          <div style={{ 
+                            width: 200,
+                            height: 120, 
+                            background: '#f5f5f5', 
+                            border: '1px dashed #d9d9d9', 
+                            borderRadius: 8,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: '#999',
+                            fontSize: 12
+                          }}>
+                            未上传
+                          </div>
+                        )}
                       </div>
                     </Card>
                   ))}

@@ -8,7 +8,7 @@ export interface CompanionInfo {
   name: string;
   idCard: string;
   bedType: 'share' | 'single';
-  permitImageUrl: string;
+  permitImageUrl?: string;
 }
 
 export interface RegistrationDTO {
@@ -24,7 +24,7 @@ export interface RegistrationDTO {
   wechat?: string;
   city: string;
   position: string;
-  permitImageUrl: string;
+  permitImageUrl?: string;
   paymentImageUrl: string;
   totalFee: number;
 }
