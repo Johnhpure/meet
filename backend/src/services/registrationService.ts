@@ -10,8 +10,21 @@ export class RegistrationService {
   async create(data: RegistrationDTO): Promise<Registration> {
     return await prisma.registration.create({
       data: {
-        ...data,
+        name: data.name,
+        idCard: data.idCard,
+        gender: data.gender,
+        hasPlusOnes: data.hasPlusOnes,
+        plusOnesCount: data.plusOnesCount,
+        attendanceType: data.attendanceType,
         companions: data.companions ? JSON.stringify(data.companions) : null,
+        phone: data.phone,
+        email: data.email,
+        wechat: data.wechat ?? null,
+        city: data.city,
+        position: data.position,
+        permitImageUrl: data.permitImageUrl ?? null,
+        paymentImageUrl: data.paymentImageUrl,
+        totalFee: data.totalFee,
       },
     });
   }
